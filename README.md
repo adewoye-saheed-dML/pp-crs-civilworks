@@ -5,18 +5,19 @@
 
 ## Project Overview
 
-The **Public Procurement Carbon Risk Screen (PP-CRS)** is an open-source forensic intelligence tool designed to audit government spending data for hidden climate risks.
+The Public Procurement Carbon Risk Screen (PP-CRS) is an open-source forensic intelligence tool designed to audit government spending data for hidden climate risks.
 
 **The Problem:** Traditional carbon accounting relies on "Bill of Quantities" data provided *after* a project is built. This is too late to influence design choices.
-**The Solution:** PP-CRS flips this model. It uses **Heuristic Financial Modeling** to estimate hidden embodied carbon risks *before* contracts are fully executed.
 
-The tool ingests raw open procurement data, filters for heavy civil engineering works, and transmutes **Financial Capital** (Spend in £) into **Natural Capital** (Carbon in $tCO_2e$) using calibrated industry composite rates.
+**The Solution:** PP-CRS flips this model. It uses Heuristic Financial Modeling to estimate hidden embodied carbon risks *before* contracts are fully executed.
+
+The tool ingests raw open procurement data, filters for heavy civil engineering works, and transmutes Financial Capital (Spend in £) into Natural Capital (Carbon in $tCO_2e$) using calibrated industry composite rates.
 
 ---
 
 ## The Forensic Methodology
 
-The tool operates on a strict **"Noise-to-Signal" Pipeline**, transforming raw, messy government data into targeted executive intelligence.
+The tool operates on a strict "Noise-to-Signal" Pipeline, transforming raw, messy government data into targeted executive intelligence.
 
 ### Phase 1: Ingestion & Filter (`ingest_contracts.py`)
 **Objective:** Isolate "Shovel-Ready" infrastructure projects from administrative noise.
@@ -28,17 +29,17 @@ The tool operates on a strict **"Noise-to-Signal" Pipeline**, transforming raw, 
 
 ### Phase 2: Data Hygiene & Entity Resolution (`clean_data.py`)
 **Objective:** Normalize inconsistent government entry data to prevent Scope 3 leakage.
-* **Entity Resolution:** Merges fragmented buyer names (e.g., *"Sellafield Ltd"* + *"Sellafield Limited"* $\rightarrow$ **Sellafield Limited**) using a regex normalization dictionary.
+* **Entity Resolution:** Merges fragmented buyer names (e.g., *"Sellafield Ltd"* + *"Sellafield Limited"* $\rightarrow$ Sellafield Limited) using a regex normalization dictionary.
 * **Deduplication:** Removes duplicate OCDS entries (common in government datasets) and sanitizes currency fields.
-* **Impact:** In 2025 tests, this phase merged **20+ distinct buyer entities** and removed **~15%** of rows as duplicates/zero-value, ensuring high-fidelity reporting.
+* **Impact:** In 2025 tests, this phase merged 20+ distinct buyer entities and removed ~15% of rows as duplicates/zero-value, ensuring high-fidelity reporting.
 
 ### Phase 3: The PQE Engine (`pqe_engine.py`)
-**Objective:** The core "Alchemy" step—converting **Money (£)** into **Carbon ($tCO_2e$)**.
-* **Logic:** Public procurement data lists *Money*, not *Materials*. The engine solves this by applying a **Price-to-Quantity Heuristic** calibrated against UK industry standards.
+**Objective:** The core "Alchemy" step—converting Money (£) into Carbon ($tCO_2e$)**.
+* **Logic:** Public procurement data lists *Money*, not *Materials*. The engine solves this by applying a Price-to-Quantity Heuristic calibrated against UK industry standards.
 * **Algorithm:**
     1.  **Material Detection:** Scans contract titles/descriptions for keywords (e.g., "Resurfacing" -> Asphalt, "Bridge" -> Concrete/Steel).
-    2.  **Mass Estimation:** Divides Spend by the **Composite Installed Rate**.
-    3.  **Carbon Calculation:** Multiplies Mass by the **Embodied Carbon Factor**.
+    2.  **Mass Estimation:** Divides Spend by the Composite Installed Rate.
+    3.  **Carbon Calculation:** Multiplies Mass by the Embodied Carbon Factor.
 
 #### The Equations
 $$
@@ -64,7 +65,7 @@ All carbon factors are strictly traceable to verified UK industry standards.
 
 ### Phase 5: Automated Advisory (`generate_memo.py`)
 **Objective:** Generate "Privacy-Safe" executive intelligence.
-* Automatically generates a **Forensic Memo (PDF)** for any entity flagged as **CRITICAL RISK** (>1,000 $tCO_2e$).
+* Automatically generates a Forensic Memo (PDF) for any entity flagged as CRITICAL RISK (>1,000 $tCO_2e$).
 * **Content:** Audits the math ($£ \rightarrow t \rightarrow CO_2$) and suggests specific material interventions (e.g., *"Switch to Warm Mix Asphalt"*).
 
 ---
