@@ -1,0 +1,12 @@
+material_id,material_name,composite_price_gbp_per_tonne,carbon_factor_kgco2e_per_tonne,ice_source_ref,confidence_rating,keywords
+MAT_ASPH_GEN,Asphalt (General Road),85.00,56.15,ICE_V4.1_Asphalt_4%_Binder,High,asphalt|bitumen|surfacing|carriageway|pavement|resurfacing|tarmac|hca
+MAT_ASPH_SMA,Asphalt (Surface/SMA),95.00,64.36,ICE_V4.1_Asphalt_5.5%_Binder,High,sma|thin surface|wearing course|surface course
+MAT_CONC_GEN,Concrete (General C25/30),110.00,119.00,ICE_V4.1_Concrete_C25/30_CEM_I,High,concrete|c25|c30|gen3|foundation|slab|footing|mass concrete
+MAT_CONC_STR,Concrete (Structural C32/40),125.00,138.00,ICE_V4.1_Concrete_C32/40_CEM_I,High,structural concrete|c32|c40|c50|beam|column|retaining wall|rc structure
+MAT_CONC_PRE,Concrete (Precast),250.00,150.00,ICE_V4.1_Precast_Avg_Est,Medium,precast|pcc|culvert|kerb|paving slab|blockwork|concrete pipe
+MAT_STEL_SEC,Steel (Structural Sections),1500.00,1610.00,ICE_V4.1_Steel_Section_World,High,steel frame|structural steel|gantry|girder|beam|column|rsj
+MAT_STEL_REB,Steel (Rebar/Mesh),1100.00,1720.00,ICE_V4.1_Steel_Rebar_World,High,rebar|reinforcement|mesh|reinforcing|steel bar
+MAT_AGG_VIR,Aggregate (Virgin/Primary),25.00,7.47,ICE_V4.1_Aggregates_General_UK,High,aggregate|gravel|sand|virgin|primary|subbase|mot type 1
+MAT_AGG_REC,Aggregate (Recycled/Fill),15.00,6.05,ICE_V4.1_Aggregates_Recycled,Medium,recycled agg|crushed concrete|demolition waste|fill|6f2|capping
+MAT_EARTH,Earthworks (Excavation),18.00,5.41,DEFRA_2025_Fuels_Diesel_Mineral,Medium,excavation|earthwork|muck away|cart away|disposal|spoil|site clearance
+MAT_GEN,General Civil Blend (Synthetic),45.00,31.00,PROXY_Synthetic_Mix_40Earth_30Agg_30Struct,Low,default
