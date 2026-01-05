@@ -82,9 +82,10 @@ pp-crs-civilworks/
 │   ├── Memo_Sellafield_Limited.pdf
 │   └── Memo_Westminster_City_Council.pdf
 ├── ingest_contracts.py                     # Step 1: Fetches & Filters API Data
-├── clean_data.py                           # Step 2: Entity Resolution & Hygiene
-├── pqe_engine.py                           # Step 3: Price-to-Quantity Estimator
-├── generate_memo.py                        # Step 4: PDF Report Generator
+├── filter_civil_work.py                    # Step 2: Filters only Relevant civil works
+├── clean_data.py                           # Step 3: Entity Resolution & Hygiene
+├── pqe_engine.py                           # Step 4: Price-to-Quantity Estimator
+├── generate_memo.py                        # Step 5: PDF Report Generator
 ├── requirements.txt                        # Dependencies
 └── README.md                               # This documentation
 ```
@@ -190,7 +191,3 @@ MIT License
 - **Carbon Factors**: Circular Ecology ICE Database V4.1 & UK Gov DEFRA 2025
 - **Procurement Data**: UK Contracts Finder (OCDS)
 - **Pricing Heuristics**: Derived from industry averages (SPONS / BCIS)
-
----
-
-**Questions or Issues?** Please open an issue on GitHub or contact the maintainers.
