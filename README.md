@@ -3,7 +3,7 @@
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Status](https://img.shields.io/badge/status-active_forensic-red)
 
-## 1. Project Overview
+## Project Overview
 
 The **Public Procurement Carbon Risk Screen (PP-CRS)** is an open-source forensic intelligence tool designed to audit government spending data for hidden climate risks.
 
@@ -14,7 +14,7 @@ The tool ingests raw open procurement data, filters for heavy civil engineering 
 
 ---
 
-## 2. The Forensic Methodology
+## The Forensic Methodology
 
 The tool operates on a strict **"Noise-to-Signal" Pipeline**, transforming raw, messy government data into targeted executive intelligence.
 
@@ -69,7 +69,7 @@ All carbon factors are strictly traceable to verified UK industry standards.
 
 ---
 
-## 3. Project Structure
+## Project Structure
 
 ```text
 pp-crs-civilworks/
