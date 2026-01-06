@@ -3,7 +3,7 @@ import os
 import re
 
 # --- CONFIGURATION ---
-INPUT_FILENAME = "2025_CIVIL_WORKS_CLEANED.csv"   # cleaned dataset (use this)
+INPUT_FILENAME = "2025_CIVIL_WORKS_CLEANED.csv"   
 REF_FILENAME = "material_reference.csv"
 OUTPUT_FILENAME = "2025_CARBON_RISK_SCREENED.csv"
 MIN_SPEND_GBP = 5000
