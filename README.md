@@ -34,7 +34,7 @@ The tool operates on a strict "Noise-to-Signal" Pipeline, transforming raw, mess
 * **Impact:** In 2025 tests, this phase merged 20+ distinct buyer entities and removed ~15% of rows as duplicates/zero-value, ensuring high-fidelity reporting.
 
 ### Phase 3: The PQE Engine (`pqe_engine.py`)
-**Objective:** The core "Alchemy" step—converting Money (£) into Carbon ($tCO_2e$)**.
+**Objective:** The core "Alchemy" step—converting Money (£) into Carbon ($tCO_2e$).
 * **Logic:** Public procurement data lists *Money*, not *Materials*. The engine solves this by applying a Price-to-Quantity Heuristic calibrated against UK industry standards.
 * **Algorithm:**
     1.  **Material Detection:** Scans contract titles/descriptions for keywords (e.g., "Resurfacing" -> Asphalt, "Bridge" -> Concrete/Steel).
